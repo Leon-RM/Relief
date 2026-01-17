@@ -34,7 +34,7 @@ app.post('/api/comfort', async (req, res) => {
       headers: {
         'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': 'http://localhost:3000',
+        'HTTP-Referer': 'https://relief-wine.vercel.app/',
         'X-Title': 'Student Relief Website'
       },
       body: JSON.stringify({
