@@ -1,0 +1,19 @@
+{
+  "name": "student-relief-website",
+  "version": "1.0.0",
+  "description": "A beautiful website for students to release their thoughts with AI-powered comfort messages",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["mental-health", "student", "ai", "comfort"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "node-fetch": "^2.7.0"
+  }
+}

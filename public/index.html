@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ปลดปล่อย - ปล่อยวางสิ่งที่หนักใจ</title>
+    <meta name="description" content="พื้นที่ปลอดภัยสำหรับนักเรียนในการปลดปล่อยความรู้สึก">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Stars background -->
+    <div class="stars-container" id="stars-container"></div>
+
+    <!-- Background decorative elements -->
+    <div class="bg-decoration"></div>
+    <div class="bg-decoration-2"></div>
+
+    <!-- Floating balloons container -->
+    <div id="balloons-container"></div>
+
+    <!-- Particles container -->
+    <div id="particles-container"></div>
+
+    <!-- Main content -->
+    <div class="container">
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-glow"></div>
+                <h1 class="logo">✨ ปลดปล่อย</h1>
+            </div>
+            <p class="tagline">ปล่อยวางสิ่งที่หนักใจไว้ที่นี่</p>
+        </header>
+
+        <main class="main-content">
+            <div class="input-card" id="input-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <label for="message-input" class="input-label">
+                        มีอะไรอยู่ในใจ?
+                    </label>
+                    <textarea id="message-input" class="message-input"
+                        placeholder="พิมพ์ทุกอย่างที่อยากปลดปล่อยออกมา... ไม่มีใครตัดสินคุณที่นี่" rows="6"></textarea>
+
+                    <button id="send-btn" class="send-btn">
+                        <span class="btn-text">ปลดปล่อย</span>
+                        <span class="btn-icon">🎈</span>
+                    </button>
+
+                    <p class="helper-text">ข้อความของคุณจะลอยไปเหมือนบอลลูน และมี AI พร้อมให้กำลังใจคุณ... 💙</p>
+                </div>
+            </div>
+
+            <!-- AI Response Card (Center of screen) -->
+            <div id="ai-response-card" class="ai-response-card hidden">
+                <div class="response-content">
+                    <div class="response-icon">💙</div>
+                    <p id="ai-message" class="ai-message"></p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>คุณไม่ได้อยู่คนเดียว AI พร้อมให้กำลังใจคุณรับฟังทุกอย่างและให้คำแนะนำ 🤍</p>
+            <p style="margin-top: 0.5rem;">
+                Made by <strong>SKT14 Student</strong> |
+                Powered by <a href="https://openrouter.ai" target="_blank">OpenRouter</a> with
+                <strong>Mistral Devstral 2512</strong> |
+                Hosted on <a href="https://render.com" target="_blank">Render</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
