@@ -41,7 +41,7 @@
 
 body {
   font-family: 'Noto Sans Thai', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 30%, #4a1942 60%, #1a1a2e 100%);
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a0f2e 30%, #2d1b4e 50%, #1a0f2e 70%, #0a0a0f 100%);
   color: var(--color-text-primary);
   min-height: 100vh;
   overflow-x: hidden;
@@ -109,7 +109,7 @@ body {
   position: fixed;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.3;
+  opacity: 0.15;
   pointer-events: none;
   z-index: 0;
   animation: float 20s ease-in-out infinite;
@@ -313,7 +313,7 @@ body {
   background: var(--color-glow);
   border-radius: 50%;
   filter: blur(30px);
-  opacity: 0.6;
+  opacity: 0.3;
   animation: pulse 3s ease-in-out infinite;
 }
 
@@ -390,7 +390,7 @@ body {
 
 .input-card:hover .card-glow,
 .input-card:focus-within .card-glow {
-  opacity: 0.3;
+  opacity: 0.15;
 }
 
 .card-content {
@@ -742,5 +742,42 @@ body {
 @keyframes spin {
   to {
     transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ===== GLASSMORPHISM LOADING SPINNER ===== */
+.loading-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  display: none;
+}
+
+.loading-spinner.active {
+  display: block;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 6px solid rgba(255, 255, 255, 0.1);
+  border-top: 6px solid rgba(167, 139, 250, 0.6);
+  border-right: 6px solid rgba(236, 72, 153, 0.6);
+  border-radius: 50%;
+  animation: spinRotate 1s linear infinite;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(167, 139, 250, 0.1);
+}
+
+@keyframes spinRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }

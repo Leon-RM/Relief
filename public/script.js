@@ -6,6 +6,7 @@ const particlesContainer = document.getElementById('particles-container');
 const inputCard = document.getElementById('input-card');
 const aiResponseCard = document.getElementById('ai-response-card');
 const aiMessage = document.getElementById('ai-message');
+const loadingSpinner = document.getElementById('loading-spinner');
 
 // State
 let isProcessing = false;
@@ -58,19 +59,28 @@ async function handleSendMessage() {
             messageInput.value = '';
         }, 300);
 
+        // Show loading spinner
+        setTimeout(() => {
+            loadingSpinner.classList.add('active');
+        }, 800);
+
         // Get AI comfort message
         const comfortMessage = await getComfortMessage(message);
+
+        // Hide loading spinner
+        loadingSpinner.classList.remove('active');
 
         // Show AI response in center after input card hides
         setTimeout(() => {
             showAIResponse(comfortMessage);
-        }, 800);
+        }, 300);
 
     } catch (error) {
         console.error('Error:', error);
+        loadingSpinner.classList.remove('active');
         setTimeout(() => {
             showAIResponse('เรารับฟังคุณอยู่ คุณไม่ได้อยู่คนเดียว และความรู้สึกของคุณมีความหมาย 💙✨');
-        }, 800);
+        }, 300);
     } finally {
         // Reset button state after animation
         setTimeout(() => {
