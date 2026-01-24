@@ -7,12 +7,16 @@ const inputCard = document.getElementById('input-card');
 const aiResponseCard = document.getElementById('ai-response-card');
 const aiMessage = document.getElementById('ai-message');
 const loadingSpinner = document.getElementById('loading-spinner');
+const closeAiBtn = document.getElementById('close-ai-btn');
 
 // State
 let isProcessing = false;
 
 // Event Listeners
 sendBtn.addEventListener('click', handleSendMessage);
+if (closeAiBtn) {
+    closeAiBtn.addEventListener('click', hideAIResponse);
+}
 messageInput.addEventListener('keydown', (e) => {
     // Allow Ctrl/Cmd + Enter to send
     if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
@@ -175,11 +179,6 @@ function showAIResponse(message) {
     aiMessage.textContent = message;
     aiResponseCard.classList.remove('hidden');
     aiResponseCard.classList.remove('fade-out');
-
-    // Auto-hide after 8 seconds with fade out
-    setTimeout(() => {
-        hideAIResponse();
-    }, 8000);
 }
 
 // Hide AI response card with fade out animation
